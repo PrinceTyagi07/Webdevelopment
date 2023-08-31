@@ -1,0 +1,48 @@
+<!-- npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-sky-500 md:items-center md:flex justify-center ">
+    <div id="main" class=" flex md:mx-auto justify-center   md:border-[4px] md:w-[60%] md:border-black mt-7 md:mt-24 md:bg-sky-200 py-14 px-5 ">
+        <div class="wrap  flex flex-col justify-center m-2 space-y-10 md:space-y-0 md:items-center ">
+            <div class="  md:w-full md:items-center ">
+                <h1 class="flex justify-center font-bold text-2xl">Guess The Number</h1>
+                <div class="p-4 font-semibold md:block hidden ">
+                    <p>Try and guess a random number b/w 1 and 100.</p>
+                    <p>You have 10 attemps to guess the right number.</p>
+                </div>
+                <div class="font-semibold md:hidden">
+                    <p class="px-2"> guess a number b/w 1 and 100.</p>
+                    <p class="px-2">You have 10 attemps.</p>
+                </div>
+            </div>
+
+            <div class="my-2 md:my-0 md:mt-0 items-center font-semibold ">
+
+                <form class="form flex flex-col space-y-3 pl-14 md:my-0  w-[200px] md:pl-2 md:items-center">
+                    <label for="guess-field " id="guess"> Guess The Number</label>
+                    <input class=" p-2 w-36 md:w-fullhover:border-2 hover:border-blue-700 rounded-md" type="text"
+                        id="guessfield" placeholder="Enter the number" class="guessfield">
+                    <input
+                        class="border-2 mx-auto md:mx-0  border-black w-28 bg-green-500 rounded-[5px] hover:bg-green-600"
+                        type="submit" id="subt" value="Submit Guess " class="guesssubmit">
+                </form>
+            </div>
+            <div class="result font-semibold px-2 md:p-[30px]">
+                <p>Previus Guesses:<span class="guesses"></span> </p>
+                <p>Guesses Remaining: <span class="lastresult">10</span></p>
+                <p class="lowOrHi"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
