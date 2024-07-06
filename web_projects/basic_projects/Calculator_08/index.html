@@ -1,124 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+
     <title>Calculator</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
- 
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <style>
+        input[type="button"] {
+            /* Your styles here */
+
+            color: #f31d1d;
+            font-weight: 900;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #eb6b6b;
+            color: #ffffff;
+        }
+
+        .cont {
+            border: 2px solid;
+            border-color: rgb(248, 6, 6);
+            margin: 4px;
+
+        }
+
+        .main {
+            margin-top: 10%;
+        }
+
+
+
+        .text-white {
+            font-weight: 800;
+            font-size: 30px;
+            letter-spacing: 2px;
+        }
+    </style>
 </head>
-<body>
-  
-    <div class="m-3 text-center">Calculator</div>
-    <!-- A div element to display the title "Calculator" with margin and centered text -->
-    <div class="container d-flex justify-content-center align-items-center">
-        <!-- A container div with Bootstrap classes to center its content both horizontally and vertically -->
-        <div class="border text-center d-flex flex-column m-3 p-3 bg-secondary">
-            <!-- A div with border, centered text, flexbox column layout, margin, padding, and background color -->
-            <div class="d-flex">
-                <!-- A div with a flexbox layout -->
-                <div>
-                    <!-- A generic container div -->
-                    <input type="text" style="width: 110%;" id="result" class="form-control" placeholder="0" readonly>
-                    <!-- Input field for displaying results, with styling and a readonly attribute -->
-                </div>
-            </div>
-            <div class="d-flex mt-3 justify-content-center">
-                <!-- Flex container with margin-top and centered content -->
-                <div class="m-2">
-                    <input type="button" value="(" class="px-3 py-2">
-                    <!-- Button for "(" with padding -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value=")" class="px-3 py-2">
-                    <!-- Button for ")" with padding -->
-                </div>
-                <div class="m-2">
-                    <input type="button" onclick="resetResult()" value="clear" class="px-2 py-2">
-                    <!-- Button for clearing input with onclick event to reset the result -->
-                </div>
-                <div class="m-2">
-                    <input type="button" onclick="display('/')" value="/" class="px-3 py-2">
-                    <!-- Button for division with onclick event to display "/" -->
-                </div>
-            </div>
-            <div class="d-flex mt-3 justify-content-center">
-                <!-- Flex container with margin-top and centered content -->
-                <div class="m-2">
-                    <input type="button" value="7" onclick="display('7')" class="px-3 py-2">
-                    <!-- Button for number 7 with onclick event to display "7" -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value="8" onclick="display('8')" class="px-3 py-2">
-                    <!-- Button for number 8 with onclick event to display "8" -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value="9" onclick="display('9')" class="px-3 py-2">
-                    <!-- Button for number 9 with onclick event to display "9" -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value="*" onclick="display('*')" class="px-3 py-2">
-                    <!-- Button for multiplication with onclick event to display "*" -->
-                </div>
-            </div>
-            <div class="d-flex mt-3 justify-content-center">
-                <!-- Flex container with margin-top and centered content -->
-                <div class="m-2">
-                    <input type="button" value="4" onclick="display('4')" class="px-3 py-2">
-                    <!-- Button for number 4 with onclick event to display "4" -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value="5" onclick="display('5')" class="px-3 py-2">
-                    <!-- Button for number 5 with onclick event to display "5" -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value="6" onclick="display('6')" class="px-3 py-2">
-                    <!-- Button for number 6 with onclick event to display "6" -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value="-" onclick="display('-')" class="px-3 py-2">
-                    <!-- Button for subtraction with onclick event to display "-" -->
-                </div>
-            </div>
-            <div class="d-flex mt-3 justify-content-center">
-                <!-- Flex container with margin-top and centered content -->
-                <div class="m-2">
-                    <input type="button" value="1" onclick="display('1')" class="px-3 py-2">
-                    <!-- Button for number 1 with onclick event to display "1" -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value="2" onclick="display('2')" class="px-3 py-2">
-                    <!-- Button for number 2 with onclick event to display "2" -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value="3" onclick="display('3')" class="px-3 py-2">
-                    <!-- Button for number 3 with onclick event to display "3" -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value="+" onclick="display('+')" class="px-3 py-2">
-                    <!-- Button for addition with onclick event to display "+" -->
-                </div>
-            </div>
-            <div class="d-flex mt-3 justify-content-center">
-                <!-- Flex container with margin-top and centered content -->
-                <div class="m-2">
-                    <input type="button" value="0" onclick="display('0')" class="px-3 py-2">
-                    <!-- Button for number 0 with onclick event to display "0" -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value="." onclick="display('.')" class="px-3 py-2">
-                    <!-- Button for decimal point with onclick event to display "." -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value="del" onclick="removeLast()" class="px-2 py-2">
-                    <!-- Button for delete (backspace) with onclick event to remove the last character -->
-                </div>
-                <div class="m-2">
-                    <input type="button" value="=" onclick="exprEval()" class="px-3 py-2">
-                    <!-- Button for equal sign with onclick event to evaluate the expression -->
+
+<body style="background: #000;">
+    <div class="main">
+        <div class="con">
+
+
+            <div class="m-3 text-center text-white ">Calculator</div>
+            <!-- A div element to display the title "Calculator" with margin and centered text -->
+            <div class="container d-flex justify-content-center align-items-center">
+                <!-- A container div with Bootstrap classes to center its content both horizontally and vertically -->
+                <div class="border text-center d-flex flex-column m-3 p-3 bg-secondary cont">
+                    <!-- A div with border, centered text, flexbox column layout, margin, padding, and background color -->
+                    <div class="d-flex ">
+                        <!-- A div with a flexbox layout -->
+                        <div>
+                            <!-- A generic container div -->
+                            <input type="text" style="width: 110%;" id="result" class="form-control" placeholder="0"
+                                readonly>
+                            <!-- Input field for displaying results, with styling and a readonly attribute -->
+                        </div>
+                    </div>
+                    <div class="d-flex mt-3 justify-content-center">
+                        <!-- Flex container with margin-top and centered content -->
+                        <div class="m-2">
+                            <input type="button" value="(" class="px-3 py-2">
+                            <!-- Button for "(" with padding -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value=")" class="px-3 py-2">
+                            <!-- Button for ")" with padding -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" onclick="resetResult()" value="clear" class="px-2 py-2">
+                            <!-- Button for clearing input with onclick event to reset the result -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" onclick="display('/')" value="/" class="px-3 py-2">
+                            <!-- Button for division with onclick event to display "/" -->
+                        </div>
+                    </div>
+                    <div class="d-flex mt-3 justify-content-center">
+                        <!-- Flex container with margin-top and centered content -->
+                        <div class="m-2">
+                            <input type="button" value="7" onclick="display('7')" class="px-3 py-2">
+                            <!-- Button for number 7 with onclick event to display "7" -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value="8" onclick="display('8')" class="px-3 py-2">
+                            <!-- Button for number 8 with onclick event to display "8" -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value="9" onclick="display('9')" class="px-3 py-2">
+                            <!-- Button for number 9 with onclick event to display "9" -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value="*" onclick="display('*')" class="px-3 py-2">
+                            <!-- Button for multiplication with onclick event to display "*" -->
+                        </div>
+                    </div>
+                    <div class="d-flex mt-3 justify-content-center">
+                        <!-- Flex container with margin-top and centered content -->
+                        <div class="m-2">
+                            <input type="button" value="4" onclick="display('4')" class="px-3 py-2">
+                            <!-- Button for number 4 with onclick event to display "4" -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value="5" onclick="display('5')" class="px-3 py-2">
+                            <!-- Button for number 5 with onclick event to display "5" -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value="6" onclick="display('6')" class="px-3 py-2">
+                            <!-- Button for number 6 with onclick event to display "6" -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value="-" onclick="display('-')" class="px-3 py-2">
+                            <!-- Button for subtraction with onclick event to display "-" -->
+                        </div>
+                    </div>
+                    <div class="d-flex mt-3 justify-content-center">
+                        <!-- Flex container with margin-top and centered content -->
+                        <div class="m-2">
+                            <input type="button" value="1" onclick="display('1')" class="px-3 py-2">
+                            <!-- Button for number 1 with onclick event to display "1" -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value="2" onclick="display('2')" class="px-3 py-2">
+                            <!-- Button for number 2 with onclick event to display "2" -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value="3" onclick="display('3')" class="px-3 py-2">
+                            <!-- Button for number 3 with onclick event to display "3" -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value="+" onclick="display('+')" class="px-3 py-2">
+                            <!-- Button for addition with onclick event to display "+" -->
+                        </div>
+                    </div>
+                    <div class="d-flex mt-3 justify-content-center">
+                        <!-- Flex container with margin-top and centered content -->
+                        <div class="m-2">
+                            <input type="button" value="0" onclick="display('0')" class="px-3 py-2">
+                            <!-- Button for number 0 with onclick event to display "0" -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value="." onclick="display('.')" class="px-3 py-2">
+                            <!-- Button for decimal point with onclick event to display "." -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value="del" onclick="removeLast()" class="px-2 py-2">
+                            <!-- Button for delete (backspace) with onclick event to remove the last character -->
+                        </div>
+                        <div class="m-2">
+                            <input type="button" value="=" onclick="exprEval()" class="px-3 py-2">
+                            <!-- Button for equal sign with onclick event to evaluate the expression -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -126,4 +171,5 @@
     <script src="./main.js"></script>
     <!-- Includes the external JavaScript file main.js -->
 </body>
+
 </html>
