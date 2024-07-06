@@ -1,0 +1,154 @@
+h1 {
+    position: relative;
+    bottom: 20px;
+}
+
+.sub{
+    margin-top:40px;
+    width:60px;
+    height:20px;
+    padding-left: 5px;
+    font-weight:bold;
+    color:rgb(132, 0, 255)
+}
+.sub:hover{
+    background-color: aqua;
+    border-radius: 5px;
+}
+
+.blog {
+    
+    margin-top: 55px;
+    width:145px;
+    padding-left:10px;
+}
+.blog:hover{
+    background-color: aqua;
+    border-radius: 6px;
+}
+.wd{
+    color:royalblue;
+}
+.wd1{
+    color:rgb(247, 4, 93)
+}
+
+.container1 {
+    margin: auto;
+    border:4px solid black;
+    width: 920px;
+    height: 710px;
+    border-radius: 5px;
+
+
+
+
+}
+
+.container2 {
+    margin: 10px;
+    
+    display: grid;
+    grid-template-columns: 40% 40%;
+
+
+
+}
+
+.container3 {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-template-rows: 21% 21% 21%;
+    margin: 10px;
+    grid-gap: 28px 24px;
+}
+
+.item1 {
+    border: 5px solid gray;
+    padding-left: 4px;
+    border-radius: 5px;
+}
+
+.item2 {
+    border: 5px solid gray;
+    padding-left: 4px;
+    border-radius: 5px;
+}
+
+.item3 {
+    border: 5px solid gray;
+    padding-left: 4px;
+    border-radius: 5px;
+}
+
+.item4 {
+    border: 5px solid gray;
+    padding-left: 4px;
+    border-radius: 5px;
+}
+
+.item5 {
+    border: 5px solid gray;
+    padding-left: 4px;
+    border-radius: 5px;
+}
+
+.item6 {
+    border: 5px solid gray;
+    padding-left: 4px;
+    border-radius: 5px;
+}
+
+.nov12 {
+    position: relative;
+
+    bottom: 46px;
+}
+
+.nov11 {
+    position: relative;
+    bottom: 46px
+}
+
+.para {
+    position: relative;
+    bottom: 63px
+}
+
+.para2 {
+    position: relative;
+    bottom: 63px
+}
+.link{
+    position:relative;
+    bottom:50px
+}
+.link1{
+    position:relative;
+    bottom:69px
+
+}
+.item1:hover{
+    background-color: aqua;
+}
+.item3:hover{
+    background-color: aqua;
+}
+.item5:hover{
+    background-color: aqua;
+}
+.item2:hover{
+    background-color: aqua;
+}
+.item4:hover{
+    background-color: aqua;
+}
+.item6:hover{
+    background-color: aqua;
+}
+/* .link1:hover{
+    width:170px;
+    border:2px solid black;
+    background-color: aqua;
+
+} */
